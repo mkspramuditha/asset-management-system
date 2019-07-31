@@ -1,0 +1,695 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Asset
+ *
+ * @ORM\Table(name="asset")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\AssetRepository")
+ */
+class Asset
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pcName", type="string", length=255, unique=true)
+     */
+    private $pcName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="monitor1Model", type="string", length=255, nullable=true)
+     */
+    private $monitor1Model;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="monitor1ID", type="string", length=255, nullable=true)
+     */
+    private $monitor1ID;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="monitor2Model", type="string", length=255, nullable=true)
+     */
+    private $monitor2Model;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="monitor2ID", type="string", length=255, nullable=true)
+     */
+    private $monitor2ID;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="keyboardModel", type="string", length=255, nullable=true)
+     */
+    private $keyboardModel;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="keyboardID", type="string", length=255, nullable=true)
+     */
+    private $keyboardID;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mouseModel", type="string", length=255, nullable=true)
+     */
+    private $mouseModel;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mouseID", type="string", length=255, nullable=true)
+     */
+    private $mouseID;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="headsetModel", type="string", length=255, nullable=true)
+     */
+    private $headsetModel;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="headsetID", type="string", length=255, nullable=true)
+     */
+    private $headsetID;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cpuModel", type="string", length=255, nullable=true)
+     */
+    private $cpuModel;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cpuID", type="string", length=255, nullable=true)
+     */
+    private $cpuID;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="upsModel", type="string", length=255, nullable=true)
+     */
+    private $upsModel;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="upsID", type="string", length=255, nullable=true)
+     */
+    private $upsID;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text", length=255, nullable=true)
+     */
+    private $description;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="html", type="text", length=65535, nullable=true)
+     */
+    private $html;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="active", type="boolean", length=255, nullable=true)
+     */
+    private $active;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="createdAt", type="datetime", nullable=true)
+     */
+    private $createdAt;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lastUpdatedAt", type="datetime", nullable=true)
+     */
+    private $lastUpdatedAt;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\JoinColumn(name="createdBy", referencedColumnName="id")
+     */
+    private $createdBy;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\JoinColumn(name="lastUpdatedBy", referencedColumnName="id")
+     */
+    private $lastUpdatedBy;
+
+
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set pcName
+     *
+     * @param string $pcName
+     * @return Asset
+     */
+    public function setPcName($pcName)
+    {
+        $this->pcName = $pcName;
+
+        return $this;
+    }
+
+    /**
+     * Get pcName
+     *
+     * @return string 
+     */
+    public function getPcName()
+    {
+        return $this->pcName;
+    }
+
+    /**
+     * Set monitor1Model
+     *
+     * @param string $monitor1Model
+     * @return Asset
+     */
+    public function setMonitor1Model($monitor1Model)
+    {
+        $this->monitor1Model = $monitor1Model;
+
+        return $this;
+    }
+
+    /**
+     * Get monitor1Model
+     *
+     * @return string 
+     */
+    public function getMonitor1Model()
+    {
+        return $this->monitor1Model;
+    }
+
+    /**
+     * Set monitor1ID
+     *
+     * @param string $monitor1ID
+     * @return Asset
+     */
+    public function setMonitor1ID($monitor1ID)
+    {
+        $this->monitor1ID = $monitor1ID;
+
+        return $this;
+    }
+
+    /**
+     * Get monitor1ID
+     *
+     * @return string 
+     */
+    public function getMonitor1ID()
+    {
+        return $this->monitor1ID;
+    }
+
+    /**
+     * Set monitor2Model
+     *
+     * @param string $monitor2Model
+     * @return Asset
+     */
+    public function setMonitor2Model($monitor2Model)
+    {
+        $this->monitor2Model = $monitor2Model;
+
+        return $this;
+    }
+
+    /**
+     * Get monitor2Model
+     *
+     * @return string 
+     */
+    public function getMonitor2Model()
+    {
+        return $this->monitor2Model;
+    }
+
+    /**
+     * Set monitor2ID
+     *
+     * @param string $monitor2ID
+     * @return Asset
+     */
+    public function setMonitor2ID($monitor2ID)
+    {
+        $this->monitor2ID = $monitor2ID;
+
+        return $this;
+    }
+
+    /**
+     * Get monitor2ID
+     *
+     * @return string 
+     */
+    public function getMonitor2ID()
+    {
+        return $this->monitor2ID;
+    }
+
+    /**
+     * Set keyboardModel
+     *
+     * @param string $keyboardModel
+     * @return Asset
+     */
+    public function setKeyboardModel($keyboardModel)
+    {
+        $this->keyboardModel = $keyboardModel;
+
+        return $this;
+    }
+
+    /**
+     * Get keyboardModel
+     *
+     * @return string 
+     */
+    public function getKeyboardModel()
+    {
+        return $this->keyboardModel;
+    }
+
+    /**
+     * Set keyboardID
+     *
+     * @param string $keyboardID
+     * @return Asset
+     */
+    public function setKeyboardID($keyboardID)
+    {
+        $this->keyboardID = $keyboardID;
+
+        return $this;
+    }
+
+    /**
+     * Get keyboardID
+     *
+     * @return string 
+     */
+    public function getKeyboardID()
+    {
+        return $this->keyboardID;
+    }
+
+    /**
+     * Set mouseModel
+     *
+     * @param string $mouseModel
+     * @return Asset
+     */
+    public function setMouseModel($mouseModel)
+    {
+        $this->mouseModel = $mouseModel;
+
+        return $this;
+    }
+
+    /**
+     * Get mouseModel
+     *
+     * @return string 
+     */
+    public function getMouseModel()
+    {
+        return $this->mouseModel;
+    }
+
+    /**
+     * Set mouseID
+     *
+     * @param string $mouseID
+     * @return Asset
+     */
+    public function setMouseID($mouseID)
+    {
+        $this->mouseID = $mouseID;
+
+        return $this;
+    }
+
+    /**
+     * Get mouseID
+     *
+     * @return string 
+     */
+    public function getMouseID()
+    {
+        return $this->mouseID;
+    }
+
+    /**
+     * Set headsetModel
+     *
+     * @param string $headsetModel
+     * @return Asset
+     */
+    public function setHeadsetModel($headsetModel)
+    {
+        $this->headsetModel = $headsetModel;
+
+        return $this;
+    }
+
+    /**
+     * Get headsetModel
+     *
+     * @return string 
+     */
+    public function getHeadsetModel()
+    {
+        return $this->headsetModel;
+    }
+
+    /**
+     * Set headsetID
+     *
+     * @param string $headsetID
+     * @return Asset
+     */
+    public function setHeadsetID($headsetID)
+    {
+        $this->headsetID = $headsetID;
+
+        return $this;
+    }
+
+    /**
+     * Get headsetID
+     *
+     * @return string 
+     */
+    public function getHeadsetID()
+    {
+        return $this->headsetID;
+    }
+
+    /**
+     * Set cpuModel
+     *
+     * @param string $cpuModel
+     * @return Asset
+     */
+    public function setCpuModel($cpuModel)
+    {
+        $this->cpuModel = $cpuModel;
+
+        return $this;
+    }
+
+    /**
+     * Get cpuModel
+     *
+     * @return string 
+     */
+    public function getCpuModel()
+    {
+        return $this->cpuModel;
+    }
+
+    /**
+     * Set cpuID
+     *
+     * @param string $cpuID
+     * @return Asset
+     */
+    public function setCpuID($cpuID)
+    {
+        $this->cpuID = $cpuID;
+
+        return $this;
+    }
+
+    /**
+     * Get cpuID
+     *
+     * @return string 
+     */
+    public function getCpuID()
+    {
+        return $this->cpuID;
+    }
+
+    /**
+     * Set upsModel
+     *
+     * @param string $upsModel
+     * @return Asset
+     */
+    public function setUpsModel($upsModel)
+    {
+        $this->upsModel = $upsModel;
+
+        return $this;
+    }
+
+    /**
+     * Get upsModel
+     *
+     * @return string 
+     */
+    public function getUpsModel()
+    {
+        return $this->upsModel;
+    }
+
+    /**
+     * Set upsID
+     *
+     * @param string $upsID
+     * @return Asset
+     */
+    public function setUpsID($upsID)
+    {
+        $this->upsID = $upsID;
+
+        return $this;
+    }
+
+    /**
+     * Get upsID
+     *
+     * @return string 
+     */
+    public function getUpsID()
+    {
+        return $this->upsID;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return Asset
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string 
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set active
+     *
+     * @param boolean $active
+     * @return Asset
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * Get active
+     *
+     * @return boolean 
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+    /**
+     * Set html
+     *
+     * @param string $html
+     * @return Asset
+     */
+    public function setHtml($html)
+    {
+        $this->html = $html;
+
+        return $this;
+    }
+
+    /**
+     * Get html
+     *
+     * @return string 
+     */
+    public function getHtml()
+    {
+        return $this->html;
+    }
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     * @return Asset
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime 
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Set lastUpdatedAt
+     *
+     * @param \DateTime $lastUpdatedAt
+     * @return Asset
+     */
+    public function setLastUpdatedAt($lastUpdatedAt)
+    {
+        $this->lastUpdatedAt = $lastUpdatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get lastUpdatedAt
+     *
+     * @return \DateTime 
+     */
+    public function getLastUpdatedAt()
+    {
+        return $this->lastUpdatedAt;
+    }
+
+    /**
+     * Set createdBy
+     *
+     * @param \AppBundle\Entity\User $createdBy
+     * @return Asset
+     */
+    public function setCreatedBy(\AppBundle\Entity\User $createdBy = null)
+    {
+        $this->createdBy = $createdBy;
+
+        return $this;
+    }
+
+    /**
+     * Get createdBy
+     *
+     * @return \AppBundle\Entity\User 
+     */
+    public function getCreatedBy()
+    {
+        return $this->createdBy;
+    }
+
+    /**
+     * Set lastUpdatedBy
+     *
+     * @param \AppBundle\Entity\User $lastUpdatedBy
+     * @return Asset
+     */
+    public function setLastUpdatedBy(\AppBundle\Entity\User $lastUpdatedBy = null)
+    {
+        $this->lastUpdatedBy = $lastUpdatedBy;
+
+        return $this;
+    }
+
+    /**
+     * Get lastUpdatedBy
+     *
+     * @return \AppBundle\Entity\User 
+     */
+    public function getLastUpdatedBy()
+    {
+        return $this->lastUpdatedBy;
+    }
+}

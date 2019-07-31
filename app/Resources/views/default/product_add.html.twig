@@ -1,0 +1,148 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Add Asset <small>Add New Asset</small></h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <br />
+                    {{ form_start(form,{'attr':{'class':'form-horizontal form-label-left'}}) }}
+                        <div class="form-group">
+                            {{ form_label(form.pcName,null,{'label_attr':{'class':'control-label col-md-3 col-sm-3 col-xs-12'}}) }}
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                {{ form_widget(form.pcName,{'attr':{'class':'form-control col-md-7 col-xs-12'}}) }}
+                                {{ form_errors(form.pcName) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {{ form_label(form.monitor1Model,null,{'label_attr':{'class':'control-label col-md-3 col-sm-3 col-xs-12'}}) }}
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                {{ form_widget(form.monitor1Model,{'attr':{'class':'form-control col-md-7 col-xs-12'}}) }}
+                                {{ form_errors(form.monitor1Model) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {{ form_label(form.monitor1ID,null,{'label_attr':{'class':'control-label col-md-3 col-sm-3 col-xs-12'}}) }}
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                {{ form_widget(form.monitor1ID,{'attr':{'class':'form-control col-md-7 col-xs-12'}}) }}
+                                {{ form_errors(form.monitor1ID) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {{ form_label(form.monitor2Model,null,{'label_attr':{'class':'control-label col-md-3 col-sm-3 col-xs-12'}}) }}
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                {{ form_widget(form.monitor2Model,{'attr':{'class':'form-control col-md-7 col-xs-12'}}) }}
+                                {{ form_errors(form.monitor2Model) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {{ form_label(form.monitor2ID,null,{'label_attr':{'class':'control-label col-md-3 col-sm-3 col-xs-12'}}) }}
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                {{ form_widget(form.monitor2ID,{'attr':{'class':'form-control col-md-7 col-xs-12'}}) }}
+                                {{ form_errors(form.monitor2ID) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {{ form_label(form.keyboardModel,null,{'label_attr':{'class':'control-label col-md-3 col-sm-3 col-xs-12'}}) }}
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                {{ form_widget(form.keyboardModel,{'attr':{'class':'form-control col-md-7 col-xs-12'}}) }}
+                                {{ form_errors(form.keyboardModel) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {{ form_label(form.keyboardID,null,{'label_attr':{'class':'control-label col-md-3 col-sm-3 col-xs-12'}}) }}
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                {{ form_widget(form.keyboardID,{'attr':{'class':'form-control col-md-7 col-xs-12'}}) }}
+                                {{ form_errors(form.keyboardID) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {{ form_label(form.mouseModel,null,{'label_attr':{'class':'control-label col-md-3 col-sm-3 col-xs-12'}}) }}
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                {{ form_widget(form.mouseModel,{'attr':{'class':'form-control col-md-7 col-xs-12'}}) }}
+                                {{ form_errors(form.mouseModel) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {{ form_label(form.mouseID,null,{'label_attr':{'class':'control-label col-md-3 col-sm-3 col-xs-12'}}) }}
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                {{ form_widget(form.mouseID,{'attr':{'class':'form-control col-md-7 col-xs-12'}}) }}
+                                {{ form_errors(form.mouseID) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_label(form.headsetModel,null,{'label_attr':{'class':'control-label col-md-3 col-sm-3 col-xs-12'}}) }}
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                {{ form_widget(form.headsetModel,{'attr':{'class':'form-control col-md-7 col-xs-12'}}) }}
+                                {{ form_errors(form.headsetModel) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_label(form.headsetID,null,{'label_attr':{'class':'control-label col-md-3 col-sm-3 col-xs-12'}}) }}
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                {{ form_widget(form.headsetID,{'attr':{'class':'form-control col-md-7 col-xs-12'}}) }}
+                                {{ form_errors(form.headsetID) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_label(form.cpuModel,null,{'label_attr':{'class':'control-label col-md-3 col-sm-3 col-xs-12'}}) }}
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                {{ form_widget(form.cpuModel,{'attr':{'class':'form-control col-md-7 col-xs-12'}}) }}
+                                {{ form_errors(form.cpuModel) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_label(form.cpuID,null,{'label_attr':{'class':'control-label col-md-3 col-sm-3 col-xs-12'}}) }}
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                {{ form_widget(form.cpuID,{'attr':{'class':'form-control col-md-7 col-xs-12'}}) }}
+                                {{ form_errors(form.cpuID) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {{ form_label(form.upsModel,null,{'label_attr':{'class':'control-label col-md-3 col-sm-3 col-xs-12'}}) }}
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                {{ form_widget(form.upsModel,{'attr':{'class':'form-control col-md-7 col-xs-12'}}) }}
+                                {{ form_errors(form.upsModel) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {{ form_label(form.upsID,null,{'label_attr':{'class':'control-label col-md-3 col-sm-3 col-xs-12'}}) }}
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                {{ form_widget(form.upsID,{'attr':{'class':'form-control col-md-7 col-xs-12'}}) }}
+                                {{ form_errors(form.upsID) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_label(form.description,null,{'label_attr':{'class':'control-label col-md-3 col-sm-3 col-xs-12'}}) }}
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                {{ form_widget(form.description,{'attr':{'class':'form-control col-md-7 col-xs-12'}}) }}
+                                {{ form_errors(form.description) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_label(form.html,null,{'label_attr':{'class':'control-label col-md-3 col-sm-3 col-xs-12'}}) }}
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                {{ form_widget(form.html,{'attr':{'class':'form-control col-md-7 col-xs-12'}}) }}
+                                {{ form_errors(form.html) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_widget(form.save,{'attr':{'class':'btn btn-success' }}) }}
+                        </div>
+                        {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

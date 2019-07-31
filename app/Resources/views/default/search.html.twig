@@ -1,0 +1,321 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<!-- Mirrored from themes.webmasterdriver.net/carforyou/demo/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 08 Apr 2018 05:28:32 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>CarForYou - Responsive Car Dealer HTML5 Template</title>
+    <!--Bootstrap -->
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" type="text/css">
+    <!--Custome Style -->
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" type="text/css">
+    <!--OWL Carousel slider-->
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.transitions.css') }}" type="text/css">
+    <!--slick-slider -->
+    <link href="{{ asset('assets/css/slick.css') }}" rel="stylesheet">
+    <!--bootstrap-slider -->
+    <link href="{{ asset('assets/css/bootstrap-slider.min.css') }}" rel="stylesheet">
+    <!--FontAwesome Font Style -->
+    <link href="{{ asset('assets/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    {#<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>#}
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+    <!-- SWITCHER -->
+    <link rel="stylesheet" id="switcher-css" type="text/css" href="{{ asset('assets/switcher/css/switcher.css') }}" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/switcher/css/red.css') }}" title="red" media="all" data-default-color="true" />
+    <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/switcher/css/orange.css') }}" title="orange" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/switcher/css/blue.css') }}" title="blue" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/switcher/css/pink.css') }}" title="pink" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/switcher/css/green.css') }}" title="green" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{ asset('assets/switcher/css/purple.css') }}" title="purple" media="all" />
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    
+</head>
+<body>
+
+<!-- Filter-Form -->
+<section id="filter_form" class="gray-bg">
+    <div class="container">
+        <h3>Find Your Firewall <span></span></h3>
+            <form method="get">
+                <div class="row">
+                    <div class="form-group col-md-6 col-sm-6 black_input">
+                        <label for="speed" class="form-label">Speed</label>
+                        {% if speed | length == 2 %}
+                            <input name="speed" id="speed" type="text" class="span2" value="" data-slider-min="100" data-slider-max="50000" data-slider-step="1" data-slider-value="[{{ speed[0] }},{{ speed[1] }}]"/>
+                        {% else %}
+                            <input name="speed" id="speed" type="text" class="span2" value="" data-slider-min="100" data-slider-max="50000" data-slider-step="1" data-slider-value="[100,100]"/>
+                        {% endif %}
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-6 black_input">
+                        <label for="ports1G" class="form-label">1G Ports</label>
+                        {% if ports1G | length == 2 %}
+                            <input name="ports1G" id="ports1G" type="text" class="span2" value="" data-slider-min="1" data-slider-max="25" data-slider-step="1" data-slider-value="[{{ ports1G[0] }},{{ ports1G[1] }}]"/>
+                        {% else %}
+                            <input name="ports1G" id="ports1G" type="text" class="span2" value="" data-slider-min="1" data-slider-max="25" data-slider-step="1" data-slider-value="[1,1]"/>
+                        {% endif %}
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-6 black_input">
+                        <label for="ports10G" class="form-label">10G Ports</label>
+                        {% if ports10G | length == 2 %}
+                            <input name="ports10G" id="ports10G" type="text" class="span2" value="" data-slider-min="1" data-slider-max="25" data-slider-step="1" data-slider-value="[{{ ports10G[0] }},{{ ports10G[1] }}]"/>
+                        {% else %}
+                            <input name="ports10G" id="ports10G" type="text" class="span2" value="" data-slider-min="1" data-slider-max="25" data-slider-step="1" data-slider-value="[1,1]"/>
+                        {% endif %}
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-6 black_input">
+                        <label for="multiContext" class="form-label">Multi Context</label>
+                        {% if multiContext | length == 2 %}
+                            <input name="multiContext" id="multiContext" type="text" class="span2" value="" data-slider-min="0" data-slider-max="25" data-slider-step="1" data-slider-value="[{{ multiContext[0] }},{{ multiContext[1] }}]"/>
+                        {% else %}
+                            <input name="multiContext" id="multiContext" type="text" class="span2" value="" data-slider-min="0" data-slider-max="25" data-slider-step="1" data-slider-value="[0,0]"/>
+                        {% endif %}
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-6 black_input">
+                        <label for="latency" class="form-label">Latency</label>
+                        {% if latency | length == 2 %}
+                            <input name="latency" id="latency" type="text" class="span2" value="" data-slider-min="10" data-slider-max="100" data-slider-step="1" data-slider-value="[{{ latency[0] }},{{ latency[1] }}]"/>
+                        {% else %}
+                            <input name="latency" id="latency" type="text" class="span2" value="" data-slider-min="10" data-slider-max="100" data-slider-step="1" data-slider-value="[10,10]"/>
+                        {% endif %}
+                    </div>
+
+
+                    <div class="form-group col-md-6 col-sm-6 black_input">
+                        <label for="price" class="form-label">Price</label>
+                        {% if price | length == 2 %}
+                            <input name="price" id="price" type="text" class="span2" value="" data-slider-min="250" data-slider-max="100000" data-slider-step="1" data-slider-value="[{{ price[0] }},{{ price[1] }}]"/>
+                        {% else %}
+                            <input name="price" id="price" type="text" class="span2" value="" data-slider-min="250" data-slider-max="100000" data-slider-step="1" data-slider-value="[250,250]"/>
+                        {% endif %}
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <input type="checkbox" class="checkbox" {% if sslDecryption == 1 %}checked{% endif %} name="sslDecryption" > SSL Decryption
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" class="checkbox" {% if malwareProtection == 1 %}checked{% endif %} name="malwareProtection" > Malware Protection
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" class="checkbox" {% if applicationAwareness == 1 %}checked{% endif %} name="applicationAwareness" > Application Awareness
+                    </div>
+                    
+                </div>
+                
+
+                <div class="row">
+                    <div class="form-group col-md-3 col-sm-6 pull-right">
+                        <button type="submit" class="btn btn-block"><i class="fa fa-search" aria-hidden="true"></i> Search Firewalls </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="listing-page">
+    <div class="container">
+        <div class="row">
+            <div id="graph" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+        </div>
+    </div>
+</section>
+
+<section class="listing-page">
+    <div class="container">
+        <div class="row">
+            <div id="container" style="min-width: 310px;max-width: 800px;height: 400px;margin: 0 auto"></div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="row">
+        <table id="myTable">
+            <thead>
+                <th>Name</th>
+                <th>Speed</th>
+                <th>1G Ports</th>
+                <th>10G Ports</th>
+                <th>SSL Decryption</th>
+                <th>Multi Context</th>
+                <th>Latency</th>
+                <th>Malware Protection</th>
+                <th>Application Awareness</th>
+                <th>Price</th>
+
+            </thead>
+            <tbody>
+                {% for firewall in firewalls %}
+                    <tr>
+                        <td>{{ firewall.name }}</td>
+                        <td>{{ firewall.Speed }}</td>
+                        <td>{{ firewall.ports1G }}</td>
+                        <td>{{ firewall.ports10G }}</td>
+                        <td>{% if(firewall.sslDecryption == 1) %} Yes {% else %} No {% endif %}</td>
+                        <td>{{ firewall.multiContext }}</td>
+                        <td>{{ firewall.latency }}</td>
+                        <td>{% if(firewall.malwareProtection == 1) %} Yes {% else %} No {% endif %}</td>
+                        <td>{% if(firewall.applicationAwareness == 1) %} Yes {% else %} No {% endif %}</td>
+                        <td>{{ firewall.price }}</td>
+
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    var carDetails = new Array();
+
+    {% for firewall in firewalls %}
+        var dataSet = new Array();
+        var name = '{{ firewall.name }}';
+        var data = [ {{ firewall.speed}}, {{ firewall.ports1G}}, {{ firewall.ports10G }}, {{ firewall.multiContext }}, {{ firewall.latency }}, {{ firewall.formattedPrice }}];
+        dataSet['name'] = name;
+        dataSet['data'] = data;
+        carDetails.push(dataSet);
+    {% endfor %}
+
+    Highcharts.chart('container', {
+
+        title: {
+            text: 'Firewall Comparison Graph'
+        },
+
+        subtitle: {
+            text: ''
+        },
+
+        yAxis: {
+            title: {
+                text: 'Value'
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+        xAxis: {
+            categories: ['Speed', '1G Ports', '10G Ports', 'Multi Context', 'Latency', 'price']
+        },
+        series:carDetails,
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        layout: 'horizontal',
+                        align: 'center',
+                        verticalAlign: 'bottom'
+                    }
+                }
+            }]
+        }
+
+    });
+</script>
+
+<script>
+    Highcharts.chart('graph', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Firwall Compare'
+        },
+        xAxis: {
+            categories: [
+                {% for firewall in firewalls %}
+                    '{{ firewall.name }}',
+                {% endfor %}
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Unit'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.1f} </b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [  {
+            name: 'Speed',
+            data: [{% for firewall in firewalls %}{{ firewall.speed }},{% endfor %}]
+
+        }, {
+            name: '10G Ports',
+            data: [{% for firewall in firewalls %}{{ firewall.ports10G }},{% endfor %}]
+
+        }, {
+            name: 'Multi Context',
+            data: [{% for firewall in firewalls %}{{ firewall.multiContext }},{% endfor %}]
+
+        }, {
+            name: 'Latency',
+            data: [{% for firewall in firewalls %}{{ firewall.latency }},{% endfor %}]
+
+        }, {
+            name: 'Price',
+            data: [{% for firewall in firewalls %}{{ firewall.formattedPrice }},{% endfor %}]
+
+        }]
+    });
+</script>
+<!-- Scripts -->
+<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+
+<script>
+    $(document).ready( function () {
+        $('#myTable').DataTable();
+    } );
+</script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+<script src="{{ asset('https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/js/interface.js') }}"></script>
+<!--Switcher-->
+<script src="{{ asset('assets/switcher/js/switcher.js') }}"></script>
+<!--bootstrap-slider-JS-->
+<script src="{{ asset('assets/js/bootstrap-slider.min.js') }}"></script>
+<!--Slider-JS-->
+<script src="{{ asset('assets/js/slick.min.js') }}"></script>
+<script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+
+</body>
+
+<!-- Mirrored from themes.webmasterdriver.net/carforyou/demo/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 08 Apr 2018 05:29:47 GMT -->
+</html>
