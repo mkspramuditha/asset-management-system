@@ -12,14 +12,12 @@
                        cellspacing="0" width="100%">
                     <thead>
                     <tr>
-                        <th>#</th>
                         <th>username</th>
                     </tr>
                     </thead>
                     <tbody>
                     {% for user in users %}
                         <tr>
-                            <th scope="row">1</th>
                             <td>{{ user.username }}</td>
                         </tr>
                     {% endfor %}
